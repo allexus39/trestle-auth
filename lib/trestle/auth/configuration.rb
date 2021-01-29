@@ -10,6 +10,10 @@ module Trestle
       option :user_scope, -> { Trestle.config.auth.user_class }
       option :user_admin
 
+      option :user_roles_attr, -> { :roles }
+      option :user_roles, -> { Trestle.config.auth.user_class.send(Trestle.config.auth.user_roles_attr).keys }
+      option :user_role_auth_field, -> { :pin_code }
+
       option :authenticate_with, :email
 
       option :authenticate, ->(params) {

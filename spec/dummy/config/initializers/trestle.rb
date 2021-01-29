@@ -132,6 +132,15 @@ Trestle.configure do |config|
   #
   config.auth.user_class = -> { Administrator }
 
+  # Specify the user roles to be used by role_form
+  # config.auth.user_roles_attr = -> { :roles }
+
+  # Specify the user roles to be used by role_form
+  config.auth.user_roles = -> { Trestle.config.auth.user_class.roles.except('admin').keys }
+
+  # Specify the field to authenticate user with role
+  # config.auth.user_role_auth_field = -> { :pin_code }
+
   # Specify the scope for valid admin users.
   # Defaults to config.auth.user_class (unscoped).
   #
