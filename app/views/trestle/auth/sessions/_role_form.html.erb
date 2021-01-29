@@ -6,7 +6,7 @@
     <%= f.telephone_field Trestle.config.auth.user_role_auth_field,
                          placeholder: Trestle.config.auth.user_class.human_attribute_name(
                            Trestle.config.auth.user_role_auth_field
-                         ), class: "form-control password-mask" %>
+                         ), autocomplete: :off, class: "form-control password-mask" %>
   </div>
   <div class="input-group">
     <%= f.hidden_field :role, value: @role %>
