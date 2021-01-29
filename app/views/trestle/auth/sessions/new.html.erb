@@ -21,7 +21,7 @@
 <% if @role.blank? %>
   <% Trestle.config.auth.user_roles.each do |role| %>
     <%= link_to Trestle.config.auth.user_class.human_attribute_name(
-      "#{Trestle.config.auth.user_roles_attr}.#{role}"
+      "#{Trestle.config.auth.user_roles_attr.to_s.singularize}.#{role}"
     ), login_path(role: role), class: "btn btn-primary btn-block btn-lg" %>
   <% end %>
 <% end %>
